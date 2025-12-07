@@ -45,7 +45,7 @@ export function RescuedUsers() {
       // Simulating avatar fetch (replace with real API call if available)
       const newUser: TikTokUser = {
         username,
-        avatar: `https://ui-avatars.com/api/?name=${username}&background=000&color=fff&size=128&font-size=0.4`
+        avatar: `https://api.dicebear.com/7.x/initials/png?seed=${username}&backgroundColor=000000&textColor=ffffff&fontSize=50`
       };
 
       setDisplayUsers(prev => {
