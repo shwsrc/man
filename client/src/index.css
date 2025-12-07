@@ -17,15 +17,19 @@
 
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
+
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
 
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
+
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
+
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
+
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
 
@@ -38,7 +42,7 @@
 }
 
 /* ----------------------------- */
-/* VARIÁVEIS: sem mudar o visual */
+/* VARIÁVEIS                      */
 /* ----------------------------- */
 
 :root {
@@ -116,14 +120,12 @@
 
   * {
     @apply border-border;
-    /* removido outline global para aliviar renderização */
   }
 
   body {
     @apply bg-background text-foreground font-mono antialiased selection:bg-white selection:text-black;
   }
 
-  /* Scrollbar leve */
   ::-webkit-scrollbar {
     width: 6px;
   }
@@ -136,6 +138,17 @@
   ::-webkit-scrollbar-thumb:hover {
     background: #fff;
   }
+}
+
+/* ----------------------------- */
+/* FIX DO PROBLEMA DO AVATAR    */
+/* ----------------------------- */
+
+.mask-image-gradient {
+  /* gradient padrão */
+  mask-image: linear-gradient(to bottom, transparent, white, transparent);
+  /* necessário no Chrome/Safari em produção */
+  -webkit-mask-image: linear-gradient(to bottom, transparent, white, transparent);
 }
 
 /* ----------------------------- */
@@ -172,7 +185,7 @@
     }
   }
 
-  /* Glass leve (menos blur = MUITO mais FPS) */
+  /* Glass leve */
   .glass-panel {
     @apply bg-white/5 border border-white/10 shadow-lg;
     backdrop-filter: blur(6px);
